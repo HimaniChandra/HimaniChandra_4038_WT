@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Wellbeing Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #e0eafc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      background: white;
+      border-radius: 20px;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .map-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Explore Your Digital Wellbeing</h1>
+    <p>Click on any part of the brain to explore curated content for each area of life.</p>
+
+    <!-- Your Image Map -->
+    <img src="C:\Users\Admin\Desktop\Himani_Chandra_Web_Technologies_4038\the_brainimg_exone.webp" alt="Digital Wellbeing Brain Map" usemap="#image-map" class="map-image" />
+
+    <map name="image-map">
+      <area target="_blank" alt="future" title="future" href="https://youtu.be/YEBQyx0qe8M?si=Cx8o9odtYy98_0Bj" coords="209,316,109,396" shape="rect">
+      <area target="_blank" alt="sleep" title="sleep" href="https://youtu.be/n8LQrbdMq0s?si=hdPf5dPC_hQ3Sl7Z" coords="293,113,176,60" shape="rect">
+      <area target="_blank" alt="study" title="study" href="https://youtu.be/kLw9wJM8nJk?si=3ZEZICCJQAoNHjCR" coords="430,61,284,32" shape="rect">
+      <area target="_blank" alt="jobs" title="jobs" href="https://youtu.be/frmwMTR9-Qs?si=09fROAlKim5d-ZQW" coords="159,95,117,138,162,175,205,136" shape="poly">
+      <area target="_blank" alt="advice" title="advice" href="https://youtu.be/Z4Uz5ZAQ3nI?si=R2qQx3NiIFGjhxK_" coords="289,227,367,291" shape="rect">
+      <area target="_blank" alt="fitness" title="fitness" href="https://youtu.be/9B9q72FMK3DbVn_c" coords="142,263,142,170,216,172,214,267" shape="poly">
+      <area target="_blank" alt="food" title="food" href="https://youtube.com/shorts/a2gu3bTFWDBqRAQ" coords="381,94,23" shape="circle">
+      <area target="_blank" alt="gsd" title="gsd" href="https://images.app.goo.gl/Kd3fB7ctKx9LwQ7c8" coords="71,230,91,156,134,157,140,225,109,228" shape="poly">
+      <area target="_blank" alt="breaking bad" title="breaking bad" href="https://www.northpointrecovery.com/mental-health/how-to-break-a-habit" coords="396,69,428,59,458,73,425,103,429,104,411,93" shape="poly">
+      <area target="_blank" alt="stressbusting" title="stressbusting" href="https://youtu.be/e6chXyioesY?si=mEkEubWlEZc4P1a7" coords="362,172,435,227,472,238,560,123,510,306,510,383,384,125,306,383,157,383,167" shape="poly">
+      <area target="_blank" alt="eyesight" title="eyesight" href="https://www.healthline.com/health/how-to-improve-eyesight" coords="452,316,464,308,478,302,489,296,499,287,506,285,509,295,521,290,510,323,514,330,499,330,490,330,481,330,468,326,457,320" shape="poly">
+      <area target="_blank" alt="tough" title="tough" href="https://youtu.be/ARkORqHbRIY?si=WR9hM5M3JMEJq5w" coords="213,283,246,315,285,261,247,219,219,244" shape="poly">
+      <area target="_blank" alt="done" title="done" href="https://youtu.be/psaCM19LEM8?si=GqQuuwaQkWT084M" coords="224,142,380,144,382,203,226,206" shape="poly">
+    </map>
+  </div>
+</body>
+</html>
