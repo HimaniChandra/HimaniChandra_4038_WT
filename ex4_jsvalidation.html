@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Wellbeing Plan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      width: 450px;
+      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d3436;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: #444;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #6c63ff;
+      box-shadow: 0 0 6px rgba(108, 99, 255, 0.5);
+      outline: none;
+    }
+
+    .inline-options {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .inline-options label {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #6c63ff, #48c6ef);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #48c6ef, #6c63ff);
+    }
+
+    .error {
+      color: #ff4d6d;
+      font-size: 0.85rem;
+      margin-top: -12px;
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>📱 Digital Wellbeing Plan</h2>
+  <form id="wellbeingForm">
+    
+    <!-- Full Name -->
+    <label>Full Name:</label>
+    <input type="text" id="name" required>
+    <span class="error" id="nameError"></span>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password" id="password" required>
+    <span class="error" id="passwordError"></span>
+
+    <!-- Age -->
+    <label>Age:</label>
+    <input type="number" id="age" required>
+    <span class="error" id="ageError"></span>
+
+    <!-- Screen Time Goal -->
+    <label>Daily Screen Time Goal (hours):</label>
+    <input type="number" id="screenTime" required>
+    <span class="error" id="screenTimeError"></span>
+
+    <!-- Break Interval -->
+    <label>Preferred Break Interval (minutes):</label>
+    <input type="number" id="breakInterval" required>
+    <span class="error" id="breakError"></span>
+
+    <!-- Apps/Websites -->
+    <label>Apps/Websites to Limit:</label>
+    <div class="inline-options">
+      <label><input type="checkbox" name="apps" value="Instagram"> Instagram</label>
+      <label><input type="checkbox" name="apps" value="YouTube"> YouTube</label>
+      <label><input type="checkbox" name="apps" value="Twitter"> Twitter</label>
+    </div>
+    <span class="error" id="appsError"></span>
+
+    <!-- Reward Choice -->
+    <label>Reward Choice:</label>
+    <div class="inline-options">
+      <label><input type="radio" name="reward" value="Coffee"> Coffee Treat</label>
+      <label><input type="radio" name="reward" value="Movie"> Movie Night</label>
+      <label><input type="radio" name="reward" value="Shopping"> Shopping</label>
+    </div>
+    <span class="error" id="rewardError"></span>
+
+    <!-- Start Date -->
+    <label>Start Date:</label>
+    <input type="date" required>
+
+    <!-- Avatar -->
+    <label>Upload Your Avatar:</label>
+    <input type="file" accept="image/*" required>
+
+    <!-- Motivation Tone -->
+    <label>Choose Motivation Tone:</label>
+    <select required>
+      <option value="">--Select--</option>
+      <option value="gentle">Gentle</option>
+      <option value="funny">Funny</option>
+      <option value="strict">Strict</option>
+    </select>
+
+    <!-- Motto -->
+    <label>Personal Motto / Affirmation:</label>
+    <textarea id="motto" rows="3"></textarea>
+    <span class="error" id="mottoError"></span>
+
+    <!-- Phone -->
+    <label>Phone Number:</label>
+    <input type="tel" pattern="[0-9]{10}" placeholder="10 digits" required>
+
+    <!-- Website -->
+    <label>Website to Block:</label>
+    <input type="url" placeholder="https://example.com" required>
+
+    <!-- Terms -->
+    <label><input type="checkbox" id="terms"> I agree to the terms</label>
+    <span class="error" id="termsError"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("wellbeingForm").addEventListener("submit", function(event) {
+  let valid = true;
+
+  function showError(id, msg) {
+    document.getElementById(id).innerText = msg;
+    valid = false;
+  }
+
+  // Full Name
+  let name = document.getElementById("name").value.trim();
+  if (name.length < 3) showError("nameError", "Name must be at least 3 characters");
+  else document.getElementById("nameError").innerText = "";
+
+  // Password
+  let password = document.getElementById("password").value;
+  let passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
+  if (!passwordPattern.test(password)) showError("passwordError", "Password must be 8+ chars with number & special char");
+  else document.getElementById("passwordError").innerText = "";
+
+  // Age
+  let age = parseInt(document.getElementById("age").value);
+  if (isNaN(age) || age < 13) showError("ageError", "Age must be 13 or above");
+  else document.getElementById("ageError").innerText = "";
+
+  // Screen Time Goal
+  let screenTime = parseInt(document.getElementById("screenTime").value);
+  if (screenTime < 1 || screenTime > 12) showError("screenTimeError", "Screen time must be between 1 and 12 hours");
+  else document.getElementById("screenTimeError").innerText = "";
+
+  // Break Interval
+  let breakInterval = parseInt(document.getElementById("breakInterval").value);
+  if (breakInterval < 5 || breakInterval > 120) showError("breakError", "Break interval must be 5–120 minutes");
+  else document.getElementById("breakError").innerText = "";
+
+  // Apps/Websites
+  let apps = document.querySelectorAll("input[name='apps']:checked");
+  if (apps.length < 1) showError("appsError", "Select at least one app");
+  else document.getElementById("appsError").innerText = "";
+
+  // Reward
+  let reward = document.querySelector("input[name='reward']:checked");
+  if (!reward) showError("rewardError", "Select a reward");
+  else document.getElementById("rewardError").innerText = "";
+
+  // Motto
+  let motto = document.getElementById("motto").value.trim();
+  if (motto === "") showError("mottoError", "Please enter your motto");
+  else document.getElementById("mottoError").innerText = "";
+
+  // Terms
+  let terms = document.getElementById("terms").checked;
+  if (!terms) showError("termsError", "You must agree to continue");
+  else document.getElementById("termsError").innerText = "";
+
+  if (!valid) event.preventDefault();
+});
+</script>
+
+</body>
+</html>
