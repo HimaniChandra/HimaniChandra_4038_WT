@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Sands of Time</h1>
+        <p>Uncover your fate with a glance at your diet...</p>
+
+        <div class="input-section">
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" min="1" max="120" value="30">
+        </div>
+
+        <h2>Choose Your Feast (Select 4-5 items):</h2>
+        <div class="food-choices">
+            <!-- Food items will be dynamically loaded here by JavaScript -->
+        </div>
+
+        <button id="predictButton">Predict My Demise</button>
+
+        <div class="result-section">
+            <p id="predictionResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
