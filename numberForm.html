@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Number Operations</title>
+    <style>
+        /* Reset default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #202020;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            width: 350px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #5563DE;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3a4bb7;
+        }
+
+        /* Optional: style checkboxes as block items */
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: normal;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="http://localhost:8080/himani_4038_tomcat/NumberOperationsServlet">
+        <h2>Number Operations</h2>
+
+        <label>Enter a Number:</label>
+        <input type="number" name="number" required>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="operation" value="factorial"> Find Factorial</label>
+            <label><input type="checkbox" name="operation" value="palindrome"> Check Palindrome</label>
+            <label><input type="checkbox" name="operation" value="fibonacci"> Fibonacci Series</label>
+            <label><input type="checkbox" name="operation" value="prime"> Check Prime</label>
+            <label><input type="checkbox" name="operation" value="cuberoot"> Find Cube Root</label>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

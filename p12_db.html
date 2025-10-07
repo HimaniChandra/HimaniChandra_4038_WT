@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Marklist</h1><hr>    
+    <!--Invoke marklist1 servlet to display all the students' marks-->
+    <a href="http://localhost:8080/himani_4038_tomcat/db1">Display all students' marks</a>
+    <hr>
+    <!-- On submit invoke marklist2 servlet to display mark details of specific dept students-->
+    <h3>View Department Specific Mark Details</h3>
+    <form action="http://localhost:8080/himani_4038_tomcat/db2">
+        <!--Drop down selection-->
+        <label for="course">Department</label>
+        <select id="course" name="course">
+        <option value="empty">--</option>
+        <option value="CSE">COMPUTER SCIENCE AND ENGINEERING</option>
+        <option value="ECE">ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+        <option value="MECH">MECHANICAL ENGINEERING</option>
+        <option value="EEE">ELECTRICAL ENGINEERING</option>
+        <br>
+        <br>
+        <input type="submit" value="SUBMIT"/>
+    </form>
+    <h2>Insert Data into DB</h2>
+    <form action="http://localhost:8080/himani_4038_tomcat/db3" method="post">
+        <p>Dept ID:</p> 
+        <!-- Create an element with mandatory name attribute,
+        so that data can be transfer to the servlet using getParameter() -->
+        <input type="text" name="depid"/>
+        <p>Dept Name:</p> 
+        <input type="text" name="depname"/>
+        <p>NOS:</p> 
+        <input type="text" name="depnos"/>
+        <br/><br/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
